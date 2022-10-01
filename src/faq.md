@@ -1,6 +1,8 @@
 ---
 title: FAQ | Lucifer
 layout: layout.njk
+eleventyNavigation:
+  key: FAQ
 ---
 
 # Frequently Asked Questions

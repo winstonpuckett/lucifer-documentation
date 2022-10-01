@@ -18,5 +18,8 @@
   "homepage": "https://github.com/winstonpuckett/lucifer-documentation#readme",
   "dependencies": {
     "html-minifier": "^4.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-navigation": "^0.3.5"
   }
 }

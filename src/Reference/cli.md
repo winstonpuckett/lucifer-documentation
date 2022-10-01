@@ -1,6 +1,9 @@
 ---
 title: CLI Reference | Lucifer
 layout: layout.njk
+eleventyNavigation:
+  key: CLI Reference
+  parent: Reference
 ---
 
 # CLI Reference
