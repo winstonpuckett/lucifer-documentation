@@ -1,0 +1,22 @@
+{
+  "name": "lucifer-documentation",
+  "version": "0.1.2",
+  "description": "Documentation for the lucifer project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winstonpuckett/lucifer-documentation.git"
+  },
+  "author": "Winston Puckett",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/winstonpuckett/lucifer-documentation/issues"
+  },
+  "homepage": "https://github.com/winstonpuckett/lucifer-documentation#readme",
+  "dependencies": {
+    "html-minifier": "^4.0.0"
+  }
+}
