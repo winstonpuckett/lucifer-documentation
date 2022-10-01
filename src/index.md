@@ -9,3 +9,6 @@ eleventyNavigation:
 
 Illuminating CLI testing.
 
+## It's really easy
+
+Install
