@@ -15,7 +15,24 @@ Installation is incredibly simple and will be supported in many scenarios. Curre
 
 ## Easy test suite management
 
+Your test suite should never become more cumbersome than the code you're testing. Lucifer does many things to simplify and standardize your test suite.
+
+- Test organization
+  - Standard test syntax.
+  - Features are files.
+  - Suites are folders
+- Output
+  - File / Test name info
+  - Exact details on why a test failed*
+- Run anywhere
+  - Install easily
+  - Use existing integrations with popular CI/CD systems.
+  - Runs the same on any same operating system.
 
 
 ## Dive into the details
 
+Lucifer is not hard to pick up. There are only a few concepts. [Dive in!](/reference)
+
+## Notes:
+\* As this product is still in alpha state, testing file existence and content gives a general error when either fails. Find out more [here](/reference/tests#file).
