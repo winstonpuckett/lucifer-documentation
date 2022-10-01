@@ -9,6 +9,13 @@ eleventyNavigation:
 
 Illuminating CLI testing.
 
-## It's really easy
+## Get up and running quickly
 
-Install
+Installation is incredibly simple and will be supported in many scenarios. Currently the easiest way to install is through cargo with the command <code>cargo install lucifer-testing</code>. Head to the installation page [here](/installation) for full instructions and options.
+
+## Easy test suite management
+
+
+
+## Dive into the details
+
