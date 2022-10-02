@@ -37,15 +37,15 @@ title: Lucifer
 
 <header>
     <h1 class="title__iconwrapper"><a class="title__link" href="/">🐲 LUCIFER</h1>
-
-    <hr class="title__separator">
-
-    <nav>
-        {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-    </nav>
 </header>
 
 <hr>
+
+<aside class="sidebar">
+    <nav>
+        {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+    </nav>
+</aside>
 
 <main>
     {{ content | safe }}

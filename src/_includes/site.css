@@ -37,6 +37,7 @@ p {
     font-size: var(--f-size);
 }
 
+
 .title__iconwrapper {
     font-size: var(--f-size-large);
     /* margin-top: auto; */
