@@ -15,7 +15,7 @@ This page contains a simple "getting started" guide to walk you through the norm
 
 ## Suite
 
-A suite is a set of features which should be run together with one run command. In practical terms, a suite is a single top-level folder which contains one or more features.
+A suite is a set of features which should be run together. In practical terms, a suite is a single folder which contains one or more features.
 
 By default, lucifer assumes that your current working directory is the suite. This is called the "input directory" and can be changed with the [--input-directory flag](/reference/cli).
 
@@ -25,7 +25,7 @@ In your chosen directory, create a folder called "suite". This will serve as the
 
 ## Feature
 
-A feature is a set of tests within a suite. You can group features together in whatever way makes sense for the project. The original developer believes that the concept of a feature aligns with a specific use case the cli exposes.
+A feature is a set of tests within a suite. You can group tests together in whatever way makes sense for the project. The original developer believes that the concept of a feature aligns with one specific use case the cli exposes.
 
 With lucifer, features are represented as single yaml files. The name of the file is the name of the feature.
 
@@ -39,15 +39,15 @@ Within your flags.yaml, put the following line.
 command: lucifer
 ```
 
-This will tell the feature to run lucifer every time (We'll be testing lucifer itself, by the way. It's the only command guaranteed to be on your machine 😉).
+This defines what cli we are testing in each test (We'll be testing lucifer itself, by the way. It's the only command guaranteed to be on your machine 😉).
 
 ## Tests
 
-A test is a list of arguments to pass to the command and a list of expectations which should be met as a result of its run. These tests happen to be run in order, synchronously, but this should not be relied on when writing the tests. There are thoughts of parallelizing tests for better performance.
+A test is a list of arguments to pass to the command and a list of expectations which should be met as a result of its run. These tests happen to be run in order, synchronously. However, there may be work in the future which changes this behavior, so tests should always be written so that they can be run regardless of order.
 
 ### Activity - Add tests to your feature
 
-Underneath your command, enter in this array:
+Underneath your command, enter this array:
 
 ```yaml
 tests:
@@ -90,13 +90,13 @@ Now that we have walked through what each major section means, let's add a secon
 
 Now that we have a suite, run lucifer and see the results!
 
-Note: You should run lucifer OUTSIDE the folder we're testing. Otherwise it will go into an infinite loop
+Note: You should run lucifer OUTSIDE the folder we're testing. Otherwise it will go into an infinite loop. The command below will work only if you're in the parent directory.
 
 ```bash
-lucifer -i ./suite
+lucifer --input-directory ./suite
 ```
 
-lucifer should output something like the following:
+lucifer should output something resembling the following:
 
 ```text
 🐉 LUCIFER 🐉
@@ -109,7 +109,7 @@ Executing tests for './suite'
   🎉 '--no-file produces no file' succeeded in 2ms
 ```
 
-In addition, you should notice a new file called results.json. This file gives us the same information as above, but in a way which is easily readable by a computer. The consideration of the computer is also why json is chosen over yaml. We write our tests in yaml so that humans can read them easily. We output json to be interpreted by downstream systems.
+In addition, you should notice a new file called results.json in your current working directory. This file gives us the same information as above, but in a way which is easily readable by a computer. The consideration of the computer is also why json is chosen over yaml. We write our tests in yaml so that humans can read them easily. We output json to be interpreted by downstream systems.
 
 JSON result from the above run:
 
@@ -117,7 +117,7 @@ JSON result from the above run:
 {"testResults":[{"succeeded":true,"milliseconds":2,"failures":[]},{"succeeded":true,"milliseconds":2,"failures":[]}]}
 ```
 
-Note: In the future, the json will include the test name and associated feature. Lucifer is still in alpha, so forgive us for ommiting that very necessary piece of information.
+Note: In the future, the json above will include the test name and associated feature. Lucifer is still in alpha, so forgive me for ommiting that very necessary piece of information.
 
 Let's see what happens when we create an unmet expectation in our tests. In the "--silent gives the correct output test, insert "any text" into the output expectation:
 
@@ -129,7 +129,7 @@ Now rerun the tests and look at the output:
 
 ```text
 🐉 LUCIFER 🐉
-Executing tests for './suite/'
+Executing tests for './suite'
 
 🐲 Feature: lucifer_flags.yaml
 
@@ -176,3 +176,9 @@ tests:
       - --output-directory
       - ./output/should_not_exist_long_form
 ```
+
+## Keep learning
+
+- Dive into the [cli](/reference/cli)
+- Understand the [test syntax](/reference/tests)
+- View the [source code](https://github.com/winstonpuckett/lucifer)
