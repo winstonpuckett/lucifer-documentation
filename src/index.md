@@ -3,6 +3,7 @@ title: Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Home
+  order: 1
 ---
 
 # LUCIFER 🐲
@@ -32,7 +33,7 @@ Your test suite should never become more cumbersome than the code you're testing
 
 ## Dive into the details
 
-Lucifer is not hard to pick up. There are only a few concepts. [Dive in!](/reference)
+Lucifer is not hard to pick up. There are only a few concepts. [Dive in!](/docs)
 
 ## Notes:
-\* As this product is still in alpha state, testing file existence and content gives a general error when either fails. Find out more [here](/reference/tests#file).
+\* As this product is still in alpha state, testing file existence and content gives a general error when either fails. Find out more [here](/docs/tests#file).

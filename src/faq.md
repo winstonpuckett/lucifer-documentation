@@ -3,6 +3,7 @@ title: FAQ | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: FAQ
+  order: 3
 ---
 
 # Frequently Asked Questions

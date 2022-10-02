@@ -3,7 +3,8 @@ title: CLI Reference | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: CLI Reference
-  parent: Reference
+  parent: Getting Started
+  order: 3
 ---
 
 # CLI Reference
@@ -104,6 +105,6 @@ Changes the output directory from the default (.) to whereever you point to. The
 
 ## Keep learning
 
-- Take the [getting started tour](/reference)
-- Understand the [test syntax](/reference/tests)
+- Take the [getting started tour](/docs)
+- Understand the [test syntax](/docs/tests)
 - View the [source code](https://github.com/winstonpuckett/lucifer)

@@ -3,6 +3,8 @@ title: Install | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Installation
+  parent: Getting Started
+  order: 1
 ---
 
 # Installation
@@ -11,7 +13,7 @@ Easy installation is a top priority for lucifer. It is well understood that most
 
 *note: Running commands copied from the internet is inherently dangerous. Even though lucifer will never aim to cause harm, it will always be safer to type these commands in.*
 
-## Cargo (recommended)
+<h2 id="cargo">Cargo (recommended)</h2>
 
 Prerequisites:
 - [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
@@ -41,7 +43,7 @@ It's likely lucifer was installed, but is not on the path.
 
 ## From source
 
-Cargo is required to install from source. Installing [directly from cargo](/installation#Cargo%20(Recommended)) is easier.
+Cargo is required to install from source. Installing [directly from cargo](#cargo) is easier.
 
 In the rare instance where installing from source is better, run the following commands.
 ```bash

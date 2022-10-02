@@ -3,7 +3,8 @@ title: Test Syntax | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Test Syntax
-  parent: Reference
+  parent: Getting Started
+  order: 2
 ---
 
 # Test Syntax

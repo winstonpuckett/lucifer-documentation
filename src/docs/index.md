@@ -1,29 +1,49 @@
 ---
-title: Reference | Lucifer
+title: Docs | Lucifer
 layout: layout.njk
 eleventyNavigation:
-  key: Reference
+  key: Getting Started
+  title_summary: Docs
+  order: 2
 ---
 
-# Reference
+# Getting Started
 
 Lucifer has two major concepts to learn:
 - Building test suites
 - Running the lucifer command
 
-This page contains a simple "getting started" guide to walk you through the normal process of how you'd go about setting up and running your own lucifer suite. In doing so, we will cover the general aspects of working with lucifer. It is assumed lucifer is already installed. For installation information, [head to our installation guide](/installation).
+This page contains a simple "getting started" guide to walk you through the normal process of how you'd go about setting up and running your own lucifer suite. In doing so, we will cover the general aspects of working with lucifer. It is assumed lucifer is already installed. For installation information, [head to our installation guide](/docs/installation).
 
-## Suite
+## Installation
+
+Prerequisites:
+- [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+
+To install lucifer, simply run the command below:
+```bash
+cargo install lucifer-testing
+```
+
+Then run the next command to see that lucifer was properly installed.
+
+```bash
+lucifer --version
+```
+
+If you're having trouble or would like to try a different method of instalation, [head to our installation guide](/docs/installation).
+
+## Understanding Suites
 
 A suite is a set of features which should be run together. In practical terms, a suite is a single folder which contains one or more features.
 
-By default, lucifer assumes that your current working directory is the suite. This is called the "input directory" and can be changed with the [--input-directory flag](/reference/cli).
+By default, lucifer assumes that your current working directory is the suite. This is called the "input directory" and can be changed with the [--input-directory flag](/docs/cli).
 
 ### Activity - Create a suite
 
 In your chosen directory, create a folder called "suite". This will serve as the basis for our upcoming tests.
 
-## Feature
+## Understanding Features
 
 A feature is a set of tests within a suite. You can group tests together in whatever way makes sense for the project. The original developer believes that the concept of a feature aligns with one specific use case the cli exposes.
 
@@ -41,7 +61,7 @@ command: lucifer
 
 This defines what cli we are testing in each test (We'll be testing lucifer itself, by the way. It's the only command guaranteed to be on your machine 😉).
 
-## Tests
+## Understanding Tests
 
 A test is a list of arguments to pass to the command and a list of expectations which should be met as a result of its run. These tests happen to be run in order, synchronously. However, there may be work in the future which changes this behavior, so tests should always be written so that they can be run regardless of order.
 
@@ -66,7 +86,7 @@ tests:
 
 The name and description here are inconsequential. You will use the name to find the test definition if it ever fails. 
 
-The expectations object tells lucifer what to expect from the run. For more information on what each of these expectations mean, head to the [tests reference](/reference/tests).
+The expectations object tells lucifer what to expect from the run. For more information on what each of these expectations mean, head to the [tests reference](/docs/tests).
 
 The args array defines what should be passed to the command. You can pass integers and strings to the args object and it will act as it would if you passed the arguments into the command line.
 
@@ -179,6 +199,6 @@ tests:
 
 ## Keep learning
 
-- Dive into the [cli](/reference/cli)
-- Understand the [test syntax](/reference/tests)
+- Dive into the [cli](/docs/cli)
+- Understand the [test syntax](/docs/tests)
 - View the [source code](https://github.com/winstonpuckett/lucifer)

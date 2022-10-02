@@ -2,6 +2,21 @@
 title: Lucifer
 ---
 
+{% set navPages = collections.all | eleventyNavigation %}
+{% macro renderNavListItem(entry) -%}
+    {%- if entry.children|length -%}
+        <details class="small__margin nav__section--inner">
+            <summary>{{ entry.title_summary }}</summary>
+            <ul class="nav__section--inner--links">
+                <a class="small__margin nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+                {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+            </ul>
+        </details>
+    {%- else -%}
+        <a class="small__margin nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+    {%- endif -%}        
+{%- endmacro %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,22 +32,19 @@ title: Lucifer
 </head>
 <body>
 
-<header>
-    {% set navPages = collections.all | eleventyNavigation %}
-    {% macro renderNavListItem(entry) -%}
-    <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-    <a href="{{ entry.url }}">{{ entry.title }}</a>
-    {%- if entry.children.length -%}
-    <ul>
-        {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
-    </ul>
-    {%- endif -%}
-    </li>
-    {%- endmacro %}
+{% set siteCss %}{% include 'site.css' %}{% endset %}
+<style>{{ siteCss | cssmin | safe }}</style>
 
-    <ul>
-    {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-    </ul>
+<header>
+    <h1 class="title"><a class="title__link" href="/">🐲 LUCIFER</h1>
+
+    <nav>
+        <ul class="nav__section">
+            {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+        </ul>
+    </nav>
+
+    <hr>
 </header>
 
 <main>
@@ -43,3 +55,4 @@ title: Lucifer
 
 </body>
 </html>
+
