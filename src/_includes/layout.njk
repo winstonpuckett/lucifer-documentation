@@ -5,15 +5,15 @@ title: Lucifer
 {% set navPages = collections.all | eleventyNavigation %}
 {% macro renderNavListItem(entry) -%}
     {%- if entry.children|length -%}
-        <details class="small__margin nav__section--inner">
+        <details class="nav__section--inner">
             <summary>{{ entry.title_summary }}</summary>
-            <ul class="nav__section--inner--links">
-                <a class="small__margin nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+            <ul class="nav__dropdownlist">
+                <a class="nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
                 {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
             </ul>
         </details>
     {%- else -%}
-        <a class="small__margin nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+        <a class="nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
     {%- endif -%}        
 {%- endmacro %}
 
@@ -36,16 +36,16 @@ title: Lucifer
 <style>{{ siteCss | cssmin | safe }}</style>
 
 <header>
-    <h1 class="title"><a class="title__link" href="/">🐲 LUCIFER</h1>
+    <h1 class="title__iconwrapper"><a class="title__link" href="/">🐲 LUCIFER</h1>
+
+    <hr class="title__separator">
 
     <nav>
-        <ul class="nav__section">
-            {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-        </ul>
+        {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
     </nav>
-
-    <hr>
 </header>
+
+<hr>
 
 <main>
     {{ content | safe }}

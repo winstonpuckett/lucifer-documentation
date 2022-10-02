@@ -6,8 +6,8 @@ eleventyNavigation:
   order: 1
 ---
 
-# LUCIFER 🐲
 
+Lucifer
 Illuminating CLI testing.
 
 ## Get up and running quickly
