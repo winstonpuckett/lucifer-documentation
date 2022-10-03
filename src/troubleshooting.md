@@ -3,6 +3,7 @@ title: Troubleshooting | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Troubleshooting
+  icon: help
   order: 5
 ---
 

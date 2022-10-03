@@ -3,6 +3,7 @@ title: Install | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Installation
+  icon: install_desktop
   parent: Getting Started
   order: 1
 ---

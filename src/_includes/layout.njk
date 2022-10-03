@@ -5,15 +5,21 @@ title: Lucifer
 {% set navPages = collections.all | eleventyNavigation %}
 {% macro renderNavListItem(entry) -%}
     {%- if entry.children|length -%}
-        <details class="nav__section--inner">
+        <details class="nav__section--inner" open>
             <summary>{{ entry.title_summary }}</summary>
             <ul class="nav__dropdownlist">
-                <a class="nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+                <a class="nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">
+                    <span class="material-symbols-outlined">{{ entry.icon }}</span>
+                    <span> {{ entry.title }}</span>
+                </a>
                 {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
             </ul>
         </details>
     {%- else -%}
-        <a class="nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">{{ entry.title }}</a>
+        <a class="nav__link{% if entry.url == page.url %} nav__link--active{% endif %}" href="{{ entry.url }}">
+            <span class="material-symbols-outlined">{{ entry.icon }}</span>
+            <span> {{ entry.title }}</span>
+        </a>
     {%- endif -%}        
 {%- endmacro %}
 
@@ -28,6 +34,8 @@ title: Lucifer
     <meta name="author" content="Winston Puckett">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐲</text></svg>"">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <title>{{ title }}</title>
 </head>
 <body>
@@ -39,13 +47,9 @@ title: Lucifer
     <h1 class="title__iconwrapper"><a class="title__link" href="/">🐲 LUCIFER</h1>
 </header>
 
-<hr>
-
-<aside class="sidebar">
-    <nav>
-        {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
-    </nav>
-</aside>
+<nav>
+    {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+</nav>
 
 <main>
     {{ content | safe }}

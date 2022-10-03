@@ -3,6 +3,7 @@ title: Docs | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Getting Started
+  icon: check_box
   title_summary: Docs
   order: 2
 ---

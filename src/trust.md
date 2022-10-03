@@ -3,6 +3,7 @@ title: Trust | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Trust
+  icon: thumb_up
   order: 4
 ---
 

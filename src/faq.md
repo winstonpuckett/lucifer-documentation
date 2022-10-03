@@ -3,6 +3,7 @@ title: FAQ | Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: FAQ
+  icon: school
   order: 3
 ---
 

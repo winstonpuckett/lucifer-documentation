@@ -3,6 +3,7 @@ title: Lucifer
 layout: layout.njk
 eleventyNavigation:
   key: Home
+  icon: home
   order: 1
 ---
 

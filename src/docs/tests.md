@@ -4,6 +4,7 @@ layout: layout.njk
 eleventyNavigation:
   key: Test Syntax
   parent: Getting Started
+  icon: data_object
   order: 2
 ---
 

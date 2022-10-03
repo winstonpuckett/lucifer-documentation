@@ -4,6 +4,7 @@ layout: layout.njk
 eleventyNavigation:
   key: CLI Reference
   parent: Getting Started
+  icon: terminal
   order: 3
 ---
 
