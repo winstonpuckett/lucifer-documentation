@@ -35,7 +35,7 @@ tests:
   - name: any name
 ```
 
-### description
+### Description
 
 Give a more in-depth understanding of the test. This is useful for documentation purposes. 
 
@@ -190,5 +190,5 @@ The code there gives examples of:
 - Running your suite in CI/CD through GitHub actions
 - And probably an example of what you're looking for
 
-Source code: [github](https://github.com/winstonpuckett/lucifer)
+Source code: [github](https://github.com/winstonpuckett/lucifer/tree/main/tests)
 

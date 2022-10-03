@@ -80,22 +80,22 @@ Option definiton
 
 Invoke with:
 ```bash
-lucifer -i <new_directory>
-lucifer --input-directory <new_directory>
+lucifer -i <directory_or_file>
+lucifer --input-directory <directory_or_file>
 ``` 
 
 Use case:<br>
-Change the input directory.
+Change the input directory to a specified directory or file.
 
 Description:<br>
-Changes the input directory (suite directory) from the default (.) to whereever you point to. This is especially useful when you want lucifer to run a tool which isn't on the path or has a dependency on the execution directory.
+Changes the input directory (suite directory) from the default (.) to whereever you point to. This is useful when you want to run a specific feature file or have a tool that relies on the execution directory.
 
 ### Output directory
 
 Invoke with:
 ```bash
-lucifer -o <new_directory>
-lucifer --output-directory <new_directory>
+lucifer -o <directory>
+lucifer --output-directory <directory>
 ``` 
 
 Use case:<br>
