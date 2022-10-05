@@ -45,9 +45,12 @@ title: Lucifer
 
 <header>
     <h1 class="title__iconwrapper"><a class="title__link" href="/">🐲 LUCIFER</h1>
+    <a id="to--nav" href="#nav">
+        <span class="material-symbols-outlined">menu</span>
+    </a>
 </header>
 
-<nav>
+<nav id="nav">
     {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
 </nav>
 

@@ -13,7 +13,7 @@ Illuminating CLI testing.
 
 ## What is lucifer?
 
-Lucifer is a command line interface application which enables easy, maintainable testing of other CLI applications. Run your test suite anywher;, maintain your test suite effortlessly; easily reproduce errors; and so much more with lucifer. 
+Lucifer is a command line interface application which enables easy, maintainable testing of other CLI applications. Run your test suite anywhere, maintain your tests effortlessly, easily reproduce errors, and so much more with lucifer. 
 
 ## Get up and running quickly
 
